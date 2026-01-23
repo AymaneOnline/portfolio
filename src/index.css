@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-padding-top: 80px;
+}
+
+body {
+  @apply font-baloo text-primary-dark dark:text-primary-light bg-primary-light dark:bg-primary-dark transition-colors;
+}
+
+#root {
+  @apply min-h-screen flex flex-col;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 680px) {
+  .hero {
+    @apply flex-col;
+  }
+
+  .hero .text h2 {
+    min-width: unset !important;
+  }
+
+  .hero .text p {
+    max-width: unset !important;
+  }
+
+  .hero .illustration img {
+    display: none !important;
+  }
+}
