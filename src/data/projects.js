@@ -2,12 +2,12 @@ export const projects = [
   {
     title: "Online E-Commerce Store",
     description:
-      "A modern e-commerce frontend built with React, Zustand, and shadcn/ui.",
+      "A modern e-commerce frontend built with React, Zustand, and shadcn/ui, featuring product browsing, state management for cart functionality, responsive design, and a clean, component-driven UI with reusable elements.",
     image:
       "https://raw.githubusercontent.com/AymaneOnline/online-store/refs/heads/main/Screenshot.png",
     demo: "https://aymaneonline.github.io/online-store/",
     source: "https://github.com/AymaneOnline/online-store",
-    tech: ["React", "Tailwind CSS", "JavaScript", "Zustand", "Shadcn/ui"],
+    tech: ["React", "Tailwind CSS", "JavaScript"],
   },
   {
     title: "Memory Tiles Game",

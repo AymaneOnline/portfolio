@@ -16,12 +16,14 @@ const Projects = () => {
             className="project-item flex flex-col md:flex-row gap-4"
           >
             {/* Left: Image */}
-            <div className="md:w-1/3 overflow-hidden rounded-[10px] flex justify-center items-center">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
+            <div className="md:w-1/3">
+              <div className="aspect-[3/2] overflow-hidden rounded-[10px]">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
 
             {/* Right: Content */}
