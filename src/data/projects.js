@@ -1,4 +1,24 @@
+import waitlyScreenshot from "../assets/images/waitly.png";
+
 export const projects = [
+  {
+    title: "Waitly",
+    description:
+      "A production SaaS waitlist tool with referral tracking, broadcast emails, CSV export, and a subscription-gated dashboard. Deployed end-to-end with real payments, GitHub Actions CI/CD to Cloudflare Workers, and a full transactional email flow.",
+    image: waitlyScreenshot,
+    demo: "https://getwaitly.com",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "Auth.js",
+      "Resend",
+      "Lemon Squeezy",
+      "Cloudflare Workers",
+    ],
+  },
   {
     title: "Online E-Commerce Store",
     description:
