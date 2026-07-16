@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { projects } from "../data/projects.js";
 import { skillIcons } from "../data/skillIcons.js";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Eye } from "lucide-react";
+import WaitlyWidget from "../components/WaitlyWidget.jsx";
 
 const Projects = () => {
+  const [showWidget, setShowWidget] = useState(false);
+
   return (
     <article className="w-full relative" id="projects">
       <h2 className="flex items-center gap-5 text-2xl mt-16 mb-6 after:content-[''] after:flex-1 after:h-px after:bg-primary-dark/20 dark:after:bg-white/20">
@@ -59,8 +63,21 @@ const Projects = () => {
                       <Github size={16} />
                     </a>
                   )}
+
+                  {project.title === "Waitly" && (
+                    <button
+                      onClick={() => setShowWidget(!showWidget)}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 text-white rounded-md hover:bg-purple-500 text-sm"
+                    >
+                      <Eye size={16} />
+                      {showWidget ? "Hide Widget" : "Widget"}
+                    </button>
+                  )}
                 </div>
               </div>
+
+              {/* Widget */}
+              {project.title === "Waitly" && showWidget && <WaitlyWidget />}
 
               {/* Tech stack */}
               <div className="skills mt-3" aria-label="Technologies used">
