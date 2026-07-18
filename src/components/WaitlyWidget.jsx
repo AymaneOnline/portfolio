@@ -10,7 +10,7 @@ const WaitlyWidget = () => {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = WAITLY_SCRIPT;
-    script.async = true;
+    script.defer = true;
     script.onload = () => setLoaded(true);
     script.onerror = () => setError(true);
     document.body.appendChild(script);
@@ -30,12 +30,13 @@ const WaitlyWidget = () => {
 
   return (
     <div className="mt-4 p-4 border border-primary-dark/20 dark:border-white/20 rounded-lg bg-gray-50 dark:bg-gray-800">
-      <div className="gw-widget" data-slug="getwaitly"></div>
-      {!loaded && (
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          Loading widget...
-        </p>
-      )}
+      <div className="gw-widget" data-slug="testpay">
+        {!loaded && (
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Loading signup form...
+          </p>
+        )}
+      </div>
     </div>
   );
 };
