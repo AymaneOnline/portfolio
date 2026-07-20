@@ -6,7 +6,7 @@ export const socialLinks = [
   },
   {
     name: 'Twitter',
-    url: 'https://x.com/AymaneOnX',
+    url: 'https://x.com/AymaneOnlineDev',
     icon: 'twitter'
   },
   {
