@@ -2,7 +2,7 @@ import { useState } from "react";
 import { projects } from "../data/projects.js";
 import { skillIcons } from "../data/skillIcons.js";
 import { ExternalLink, Github, Eye } from "lucide-react";
-import WaitlyWidget from "../components/WaitlyWidget.jsx";
+import GetWaitlyWidget from "../components/GetWaitlyWidget.jsx";
 
 const Projects = () => {
   const [showWidget, setShowWidget] = useState(false);
@@ -39,6 +39,15 @@ const Projects = () => {
                     {project.title}
                   </h3>
                   <p className="dark:text-gray-300">{project.description}</p>
+                  {project.title === "GetWaitly" && (
+                    <button
+                      onClick={() => setShowWidget(!showWidget)}
+                      className="mt-3 flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 text-white rounded-md hover:bg-purple-500 text-sm"
+                    >
+                      <Eye size={16} />
+                      {showWidget ? "Hide Widget" : "Widget"}
+                    </button>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-2 flex-shrink-0">
@@ -63,21 +72,11 @@ const Projects = () => {
                       <Github size={16} />
                     </a>
                   )}
-
-                  {project.title === "Waitly" && (
-                    <button
-                      onClick={() => setShowWidget(!showWidget)}
-                      className="flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 text-white rounded-md hover:bg-purple-500 text-sm"
-                    >
-                      <Eye size={16} />
-                      {showWidget ? "Hide Widget" : "Widget"}
-                    </button>
-                  )}
                 </div>
               </div>
 
               {/* Widget */}
-              {project.title === "Waitly" && showWidget && <WaitlyWidget />}
+              {project.title === "GetWaitly" && showWidget && <GetWaitlyWidget />}
 
               {/* Tech stack */}
               <div className="skills mt-3" aria-label="Technologies used">

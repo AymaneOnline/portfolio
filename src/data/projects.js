@@ -1,22 +1,20 @@
-import waitlyScreenshot from "../assets/images/waitly.png";
+import getwaitlyScreenshot from "../assets/images/getwaitly.png";
 
 export const projects = [
   {
-    title: "Waitly",
+    title: "GetWaitly",
     description:
       "A production SaaS waitlist tool with referral tracking, broadcast emails, CSV export, and a subscription-gated dashboard. Deployed end-to-end with real payments, GitHub Actions CI/CD to Cloudflare Workers, and a full transactional email flow.",
-    image: waitlyScreenshot,
+    image: getwaitlyScreenshot,
     demo: "https://getwaitly.com",
     tech: [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
       "Drizzle ORM",
-      "PostgreSQL",
       "Auth.js",
-      "Resend",
       "Lemon Squeezy",
-      "Cloudflare Workers",
+      "Cloudflare",
     ],
   },
   {

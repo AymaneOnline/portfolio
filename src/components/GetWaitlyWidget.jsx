@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const WAITLY_SCRIPT =
   "https://getwaitly-staging.aymaneprowork.workers.dev/widget.js";
 
-const WaitlyWidget = () => {
+const GetWaitlyWidget = () => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
@@ -41,4 +41,4 @@ const WaitlyWidget = () => {
   );
 };
 
-export default WaitlyWidget;
+export default GetWaitlyWidget;
