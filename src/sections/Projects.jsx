@@ -35,19 +35,21 @@ const Projects = () => {
               {/* Top: Title + Buttons */}
               <div className="flex justify-between items-start gap-4">
                 <div>
-                  <h3 className="font-bold dark:text-white max-sm:text-lg">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center gap-3">
+                    <h3 className="font-bold dark:text-white max-sm:text-lg">
+                      {project.title}
+                    </h3>
+                    {project.title === "GetWaitly" && (
+                      <button
+                        onClick={() => setShowWidget(true)}
+                        className="flex items-center gap-1 px-2 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-500 text-xs"
+                      >
+                        <Eye size={14} />
+                        Widget
+                      </button>
+                    )}
+                  </div>
                   <p className="dark:text-gray-300">{project.description}</p>
-                  {project.title === "GetWaitly" && (
-                    <button
-                      onClick={() => setShowWidget(!showWidget)}
-                      className="mt-3 flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 text-white rounded-md hover:bg-purple-500 text-sm"
-                    >
-                      <Eye size={16} />
-                      {showWidget ? "Hide Widget" : "Widget"}
-                    </button>
-                  )}
                 </div>
 
                 <div className="flex flex-col gap-2 flex-shrink-0">
@@ -75,9 +77,6 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Widget */}
-              {project.title === "GetWaitly" && showWidget && <GetWaitlyWidget />}
-
               {/* Tech stack */}
               <div className="skills mt-3" aria-label="Technologies used">
                 <ul className="flex flex-wrap gap-3">
@@ -102,6 +101,8 @@ const Projects = () => {
           </li>
         ))}
       </ul>
+
+      {showWidget && <GetWaitlyWidget onClose={() => setShowWidget(false)} />}
     </article>
   );
 };
