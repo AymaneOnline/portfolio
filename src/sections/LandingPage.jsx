@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useDarkMode } from '../context/DarkModeContext'
 import { Sun, Moon } from 'lucide-react'
 
@@ -21,6 +22,16 @@ const features = [
 
 const LandingPage = () => {
   const { isDark, toggleDarkMode } = useDarkMode()
+  const formRef = useRef(null)
+
+  useEffect(() => {
+    const form = formRef.current
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+      })
+    }
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white dark:from-primary-dark dark:to-[#1a1a1a] transition-colors">
@@ -53,28 +64,6 @@ const LandingPage = () => {
           <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-10 max-w-md mx-auto leading-relaxed">
             Join the waitlist to be the first to know when we launch.
           </p>
-
-          <form id="waitlist-form" className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-              className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-xl bg-accent hover:bg-accent/90 active:scale-[0.98] text-white font-semibold transition-all shadow-sm hover:shadow-md"
-            >
-              Join Waitlist
-            </button>
-          </form>
         </div>
       </section>
 
@@ -102,6 +91,43 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 bg-white dark:bg-primary-dark">
+        <div className="max-w-lg mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary-dark dark:text-white mb-4">
+            Join the Waitlist
+          </h2>
+          <p className="text-gray-500 dark:text-gray-400 mb-8">
+            Enter your details below to stay updated.
+          </p>
+
+          <form
+            id="waitlist-form"
+            ref={formRef}
+            className="flex flex-col gap-4"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
+            />
+            <button
+              type="submit"
+              className="w-full px-6 py-3 rounded-xl bg-accent hover:bg-accent/90 active:scale-[0.98] text-white font-semibold transition-all shadow-sm hover:shadow-md"
+            >
+              Join Waitlist
+            </button>
+          </form>
         </div>
       </section>
 
