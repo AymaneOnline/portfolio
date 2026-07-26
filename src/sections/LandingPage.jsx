@@ -65,26 +65,34 @@ const LandingPage = () => {
             Join the waitlist to be the first to know when we launch.
           </p>
 
-          <form className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+          <form className="flex flex-col gap-3 max-w-xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 rounded-xl bg-accent hover:bg-accent/90 active:scale-[0.98] text-white font-semibold transition-all shadow-sm hover:shadow-md"
+              >
+                Join Waitlist
+              </button>
+            </div>
             <input
               type="text"
-              name="name"
-              placeholder="Your name"
-              className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
+              name="address"
+              placeholder="Your address"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
             />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-              className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-xl bg-accent hover:bg-accent/90 active:scale-[0.98] text-white font-semibold transition-all shadow-sm hover:shadow-md"
-            >
-              Join Waitlist
-            </button>
           </form>
         </div>
       </section>
@@ -141,6 +149,12 @@ const LandingPage = () => {
               name="email"
               placeholder="Your email"
               required
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Your phone number"
               className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-primary-dark dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all shadow-sm"
             />
             <button
