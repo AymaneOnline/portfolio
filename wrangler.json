@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "portfolio-worker",
+  "name": "portfolio",
   "compatibility_date": "2026-01-23",
   "main": "src/worker.js",
   "assets": {
