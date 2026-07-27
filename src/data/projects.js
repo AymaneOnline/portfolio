@@ -4,7 +4,7 @@ export const projects = [
   {
     title: "GetWaitly",
     description:
-      "An embeddable waitlist widget. Add your landing page URL, select the signup form, and start collecting emails (required), names, and phone numbers.",
+      "A production SaaS waitlist tool with referral tracking, broadcast emails, CSV export, and a subscription-gated dashboard. Deployed end-to-end with real payments, GitHub Actions CI/CD to Cloudflare Workers, and a full transactional email flow.",
     image: getwaitlyScreenshot,
     demo: "https://getwaitly.com",
     tech: [
