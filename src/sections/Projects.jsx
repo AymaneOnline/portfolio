@@ -1,4 +1,4 @@
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { projects } from "../data/projects.js";
 import { handleLinkClick } from "../utils/navigate.js";
 
@@ -15,7 +15,7 @@ const Projects = () => {
             key={project.slug}
             className="project-item flex justify-between gap-4"
           >
-            {/* Left: Logo + Name (clickable -> detail page) */}
+            {/* Clickable -> detail page */}
             <a
               href={`/projects/${project.slug}`}
               onClick={(e) => handleLinkClick(e, `/projects/${project.slug}`)}
@@ -38,31 +38,6 @@ const Projects = () => {
                 </span>
               </div>
             </a>
-
-            {/* Right: Buttons */}
-            <div className="flex flex-col gap-2 flex-shrink-0">
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-accent text-white rounded-md hover:bg-accent/80 text-sm"
-                >
-                  <ExternalLink size={16} />
-                </a>
-              )}
-
-              {project.source && (
-                <a
-                  href={project.source}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-[#eeeeee] dark:bg-[#565656] dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#464646] text-sm"
-                >
-                  <Github size={16} />
-                </a>
-              )}
-            </div>
           </li>
         ))}
       </ul>
