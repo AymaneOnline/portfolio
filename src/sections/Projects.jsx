@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { projects } from "../data/projects.js";
 import { handleLinkClick } from "../utils/navigate.js";
+import Reveal from "../components/Reveal.jsx";
 
 const Projects = () => {
   return (
@@ -9,35 +10,40 @@ const Projects = () => {
         Projects
       </h2>
 
-      <ul className="grid grid-cols-1 gap-6 mt-5 max-w-full h-auto">
-        {projects.map((project) => (
-          <li
-            key={project.slug}
-            className="project-item flex justify-between gap-4"
-          >
-            {/* Clickable -> detail page */}
-            <a
-              href={`/projects/${project.slug}`}
-              onClick={(e) => handleLinkClick(e, `/projects/${project.slug}`)}
-              className="flex items-start gap-4 group min-w-0"
-            >
-              <div className="w-16 h-16 overflow-hidden rounded-[10px] shrink-0">
-                <img
-                  src={project.logo}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
+      <ul className="grid grid-cols-1 gap-5 mt-5 max-w-full h-auto">
+        {projects.map((project, index) => (
+          <li key={project.slug} className="project-item list-none">
+            <Reveal delay={index * 80}>
+              <a
+                href={`/projects/${project.slug}`}
+                onClick={(e) => handleLinkClick(e, `/projects/${project.slug}`)}
+                className="flex items-center justify-between gap-4 p-4 rounded-lg border border-black/5 dark:border-white/10 bg-[#f6f6f7] dark:bg-white/[0.04] hover:bg-[#eeeeef] dark:hover:bg-white/[0.08] hover:border-accent/40 group transition-colors"
+              >
+                <div className="flex items-start gap-4 min-w-0">
+                  <div className="w-16 h-16 overflow-hidden rounded-lg shrink-0">
+                    <img
+                      src={project.logo}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col pt-1 min-w-0">
+                    <h3 className="font-bold dark:text-white max-sm:text-lg group-hover:underline">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      {project.tagline}
+                    </p>
+                  </div>
+                </div>
+
+                <ArrowRight
+                  size={20}
+                  className="shrink-0 text-accent/70 group-hover:text-accent group-hover:translate-x-1 transition-all"
+                  aria-hidden="true"
                 />
-              </div>
-              <div className="flex flex-col gap-1.5 pt-1 min-w-0">
-                <h3 className="font-bold dark:text-white max-sm:text-lg group-hover:underline">
-                  {project.title}
-                </h3>
-                <span className="flex items-center gap-1 text-sm text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                  View details
-                  <ArrowRight size={14} />
-                </span>
-              </div>
-            </a>
+              </a>
+            </Reveal>
           </li>
         ))}
       </ul>
