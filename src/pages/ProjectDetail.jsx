@@ -170,32 +170,6 @@ const ProjectDetail = ({ project }) => {
         ))}
       </ul>
 
-      <div className="mt-12 flex flex-wrap gap-3">
-        {project.demo && (
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 bg-accent text-white rounded-md hover:bg-accent/80 text-sm font-medium"
-          >
-            View live demo
-            <ExternalLink size={16} />
-          </a>
-        )}
-
-        {project.source && (
-          <a
-            href={project.source}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 bg-[#eeeeee] dark:bg-[#565656] dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#464646] text-sm font-medium"
-          >
-            <Github size={16} />
-            Source code
-          </a>
-        )}
-      </div>
-
       {nextProject && (
         <div className="mt-16 pt-8 border-t border-black/5 dark:border-white/10">
           <a
