@@ -13,7 +13,7 @@ export const projects = [
     screenshotAlt: "GetWaitly waitlist dashboard interface",
     demo: "https://getwaitly.com",
     role: "Solo developer (design + code)",
-    year: "2025",
+    year: "2026",
     status: "Live",
     overview:
       "GetWaitly is a production SaaS waitlist platform built for indie hackers and solo founders. It lets you create a polished waitlist page in minutes, collect email signups, seed viral referral loops, and send automated broadcasts — without touching a single line of code.",
@@ -49,7 +49,7 @@ export const projects = [
     demo: "https://aymaneonline.github.io/memory-tiles/",
     source: "https://github.com/AymaneOnline/memory-tiles",
     role: "Solo developer (design + code)",
-    year: "2025",
+    year: "2026",
     status: "Open source",
     overview:
       "A visual memory game inspired by HumanBenchmark. Tiles light up during a memorization phase, and you must recall them during the selection phase. The board grows and the difficulty ramps up as you climb levels.",

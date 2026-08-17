@@ -28,7 +28,7 @@ const ProjectDetail = ({ project }) => {
       <article className="w-full">
         <a href="/" onClick={(e) => handleLinkClick(e, "/")}>
           <ArrowLeft size={16} className="inline-block mr-1" />
-          Back to projects
+          Back to home
         </a>
         <h2 className="flex items-center gap-5 text-2xl mt-16 mb-6 after:content-[''] after:flex-1 after:h-px after:bg-primary-dark/20 dark:after:bg-white/20">
           Project not found
@@ -51,7 +51,7 @@ const ProjectDetail = ({ project }) => {
         className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
       >
         <ArrowLeft size={16} />
-        Back to projects
+        Back to home
       </a>
 
       <header className="mt-8">
@@ -82,17 +82,31 @@ const ProjectDetail = ({ project }) => {
             )}
           </div>
 
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
-            >
-              View live demo
-              <ExternalLink size={14} />
-            </a>
-          )}
+          <div className="flex flex-wrap gap-3">
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/80 text-sm font-medium"
+              >
+                View live demo
+                <ExternalLink size={16} />
+              </a>
+            )}
+
+            {project.source && (
+              <a
+                href={project.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-[#eeeeee] dark:bg-[#565656] dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#464646] text-sm font-medium"
+              >
+                <Github size={16} />
+                Source code
+              </a>
+            )}
+          </div>
         </div>
       </header>
 
