@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { handleLinkClick } from "../utils/navigate.js";
 import WaitlyWidgetEmbed from "../components/WaitlyWidgetEmbed.jsx";
+import WaitlyPopupTrigger from "../components/WaitlyPopupTrigger.jsx";
 
 const SectionHeading = ({ children }) => (
   <h3 className="flex items-center gap-5 text-xl mt-12 mb-4 after:content-[''] after:flex-1 after:h-px after:bg-primary-dark/20 dark:after:bg-white/20">
@@ -27,6 +28,8 @@ const renderDemo = (demo) => {
           widgetType="docked"
         />
       );
+    case "popup-widget":
+      return <WaitlyPopupTrigger slug={demo.slug} />;
     case "widget":
       return <WaitlyWidgetEmbed waitlistId={demo.waitlistId} />;
     default:

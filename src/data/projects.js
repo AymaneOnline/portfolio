@@ -40,6 +40,14 @@ export const projects = [
         description:
           "An email field with the submit button built right in — ideal for a site footer. One script tag, one container, and it docks into place fully styled.",
       },
+      {
+        id: "popup-widget",
+        type: "popup-widget",
+        slug: "LY_FwI61PMZ",
+        title: "Popup widget",
+        description:
+          "A lightweight trigger that opens a clean popup modal with the waitlist form. Perfect for attention-grabbing CTAs without taking over the page.",
+      },
     ],
     role: "Solo developer (design + code)",
     year: "2026",
