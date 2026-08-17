@@ -20,11 +20,11 @@ const Projects = () => {
                 className="flex items-center justify-between gap-4 p-4 rounded-lg border border-black/5 dark:border-white/10 bg-[#f6f6f7] dark:bg-white/[0.04] hover:bg-[#eeeeef] dark:hover:bg-white/[0.08] hover:border-accent/40 group transition-colors"
               >
                 <div className="flex items-start gap-4 min-w-0">
-                  <div className="w-16 h-16 overflow-hidden rounded-lg shrink-0">
+                  <div className="w-16 h-16 rounded-lg border border-black/5 dark:border-white/10 bg-[#f6f6f7] dark:bg-white/[0.04] flex items-center justify-center p-1.5 shrink-0">
                     <img
                       src={project.logo}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="flex flex-col pt-1 min-w-0">

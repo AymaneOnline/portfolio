@@ -1,5 +1,7 @@
 import getwaitlyLogo from "../assets/images/getwaitly-logo.svg";
+import getwaitlyScreenshot from "../assets/images/getwaitly.png";
 import memoryTilesLogo from "../assets/images/memory-tiles-logo.png";
+import memoryTilesScreenshot from "../assets/images/memory-tiles-screenshot.png";
 
 export const projects = [
   {
@@ -7,18 +9,26 @@ export const projects = [
     title: "GetWaitly",
     tagline: "The simple, fast, affordable waitlist tool for indie hackers",
     logo: getwaitlyLogo,
+    screenshot: getwaitlyScreenshot,
+    screenshotAlt: "GetWaitly waitlist dashboard interface",
     demo: "https://getwaitly.com",
+    role: "Solo developer (design + code)",
+    year: "2025",
+    status: "Live",
     overview:
       "GetWaitly is a production SaaS waitlist platform built for indie hackers and solo founders. It lets you create a polished waitlist page in minutes, collect email signups, seed viral referral loops, and send automated broadcasts — without touching a single line of code.",
+    problem:
+      "Launching a product is hard enough — but most indie hackers and solo founders still have to hand-build a landing page, a signup form, and a way to reach their early users. Existing tools are either too expensive, too rigid, or leave you to string together your own scripts.",
     features: [
       "Create a branded waitlist page in minutes — no code required",
       "Drag-and-drop styles: colors, fonts, and a signup form that matches your brand",
       "Embeddable widget: paste one script tag on any site (Carrd, Webflow, WordPress, Framer)",
       "Hosted pages at getwaitly.com/w/your-id for products without a website",
       "Referral system with unique links that move subscribers up the list",
-      "One-click email broadcasts to your entire waitlist",
       "Analytics dashboard tracking visitors, signups, and conversion",
     ],
+    result:
+      "Shipped end-to-end as a paid SaaS — subscription billing via Lemon Squeezy, authentication, and automated transactional email flows — deployed to Cloudflare with GitHub Actions CI/CD.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -34,10 +44,17 @@ export const projects = [
     title: "Memory Tiles Game",
     tagline: "A visual memory game built with React and Tailwind CSS",
     logo: memoryTilesLogo,
+    screenshot: memoryTilesScreenshot,
+    screenshotAlt: "Memory Tiles Game board with highlighted tiles",
     demo: "https://aymaneonline.github.io/memory-tiles/",
     source: "https://github.com/AymaneOnline/memory-tiles",
+    role: "Solo developer (design + code)",
+    year: "2025",
+    status: "Open source",
     overview:
       "A visual memory game inspired by HumanBenchmark. Tiles light up during a memorization phase, and you must recall them during the selection phase. The board grows and the difficulty ramps up as you climb levels.",
+    problem:
+      "Tutorial to-do apps only go so far. I wanted a real interactive project that would force me to manage complex UI state: multiple game phases, animations, sound effects, and a scoring system that persists between sessions.",
     features: [
       "Progressive difficulty: board size and tile count increase with each level",
       "Memorization and selection phases with smooth flip & shake animations",
@@ -45,6 +62,8 @@ export const projects = [
       "Sound effects for game actions",
       "High score persisted with localStorage",
     ],
+    result:
+      "A polished, fully responsive game shipped live on GitHub Pages, with progressive difficulty, smooth animations, and high scores that survive a page refresh.",
     tech: ["React", "Tailwind CSS", "JavaScript"],
   },
 ];
