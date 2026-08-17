@@ -32,6 +32,14 @@ export const projects = [
         description:
           "A compact, email-only signup form for tight spaces — sidebars, footers, or in-line CTAs. Drop in the same script tag, add the mini widget container, and it renders instantly.",
       },
+      {
+        id: "docked-widget",
+        type: "docked-widget",
+        waitlistId: "cnrY_rjG7k0",
+        title: "Docked widget",
+        description:
+          "An email field with the submit button built right in — ideal for a site footer. One script tag, one container, and it docks into place fully styled.",
+      },
     ],
     role: "Solo developer (design + code)",
     year: "2026",

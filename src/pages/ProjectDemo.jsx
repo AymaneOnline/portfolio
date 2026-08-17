@@ -20,6 +20,13 @@ const renderDemo = (demo) => {
           widgetType="mini"
         />
       );
+    case "docked-widget":
+      return (
+        <WaitlyWidgetEmbed
+          waitlistId={demo.waitlistId}
+          widgetType="docked"
+        />
+      );
     case "widget":
       return <WaitlyWidgetEmbed waitlistId={demo.waitlistId} />;
     default:
