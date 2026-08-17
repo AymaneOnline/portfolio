@@ -17,12 +17,12 @@ export const projects = [
     demoRouteLabel: "Try the demo",
     demos: [
       {
-        id: "widget",
-        type: "widget",
-        slug: "testpay",
-        title: "Embeddable widget",
+        id: "full-widget",
+        type: "full-widget",
+        waitlistId: "2",
+        title: "Full widget embed",
         description:
-          "Paste a single script tag on any site and GetWaitly renders a branded signup form that matches your colors and fonts. Try it below — submit your email to see the signup flow live.",
+          "Paste a single script tag on any site and GetWaitly renders a branded waitlist form that matches your colors and fonts. Try the full widget below — submit your email to see the signup flow live.",
       },
     ],
     role: "Solo developer (design + code)",

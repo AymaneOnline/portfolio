@@ -11,8 +11,9 @@ const SectionHeading = ({ children }) => (
 
 const renderDemo = (demo) => {
   switch (demo.type) {
+    case "full-widget":
     case "widget":
-      return <WaitlyWidgetEmbed slug={demo.slug} />;
+      return <WaitlyWidgetEmbed waitlistId={demo.waitlistId} />;
     default:
       return null;
   }
