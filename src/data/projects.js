@@ -19,7 +19,7 @@ export const projects = [
       {
         id: "full-widget",
         type: "full-widget",
-        waitlistId: "2",
+        waitlistId: "dHlUyEmynQv",
         title: "Full widget embed",
         description:
           "Paste a single script tag on any site and GetWaitly renders a branded waitlist form that matches your colors and fonts. Try the full widget below — submit your email to see the signup flow live.",
