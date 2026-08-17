@@ -12,6 +12,19 @@ export const projects = [
     screenshot: getwaitlyScreenshot,
     screenshotAlt: "GetWaitly waitlist dashboard interface",
     demo: "https://getwaitly.com",
+    demoLabel: "Visit getwaitly.com",
+    demoRoute: "/projects/getwaitly/demo",
+    demoRouteLabel: "Try the demo",
+    demos: [
+      {
+        id: "widget",
+        type: "widget",
+        slug: "testpay",
+        title: "Embeddable widget",
+        description:
+          "Paste a single script tag on any site and GetWaitly renders a branded signup form that matches your colors and fonts. Try it below — submit your email to see the signup flow live.",
+      },
+    ],
     role: "Solo developer (design + code)",
     year: "2026",
     status: "Live",
@@ -47,6 +60,7 @@ export const projects = [
     screenshot: memoryTilesScreenshot,
     screenshotAlt: "Memory Tiles Game board with highlighted tiles",
     demo: "https://aymaneonline.github.io/memory-tiles/",
+    demoLabel: "View live demo",
     source: "https://github.com/AymaneOnline/memory-tiles",
     role: "Solo developer (design + code)",
     year: "2026",

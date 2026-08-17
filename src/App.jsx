@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { DarkModeProvider } from './context/DarkModeContext.jsx'
 import Layout from './components/Layout.jsx'
 import ProjectDetail from './pages/ProjectDetail.jsx'
+import ProjectDemo from './pages/ProjectDemo.jsx'
 import Hero from './sections/Hero.jsx'
 import Skills from './sections/Skills.jsx'
 import Projects from './sections/Projects.jsx'
@@ -17,25 +18,33 @@ function App() {
     return () => window.removeEventListener('popstate', onPopState)
   }, [])
 
-  const match = pathname.match(/^\/projects\/([^/]+)\/?$/)
-  const project = match
-    ? projects.find((p) => p.slug === decodeURIComponent(match[1]))
-    : null
+  const findProject = (slug) =>
+    projects.find((p) => p.slug === decodeURIComponent(slug))
+
+  const demoMatch = pathname.match(/^\/projects\/([^/]+)\/demo\/?$/)
+  const detailMatch = pathname.match(/^\/projects\/([^/]+)\/?$/)
+  const demoProject = demoMatch ? findProject(demoMatch[1]) : null
+  const detailProject = detailMatch ? findProject(detailMatch[1]) : null
+
+  let page = null
+  if (demoMatch) {
+    page = <ProjectDemo project={demoProject} />
+  } else if (detailMatch) {
+    page = <ProjectDetail project={detailProject} />
+  }
 
   return (
     <DarkModeProvider>
-      {match ? (
-        <Layout>
-          <ProjectDetail project={project} />
-        </Layout>
-      ) : (
-        <Layout>
-          <Hero />
-          <Skills />
-          <Projects />
-          <Contact />
-        </Layout>
-      )}
+      <Layout>
+        {page ?? (
+          <>
+            <Hero />
+            <Skills />
+            <Projects />
+            <Contact />
+          </>
+        )}
+      </Layout>
     </DarkModeProvider>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ExternalLink, Github, ArrowLeft, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, ArrowLeft, ArrowRight, Play } from "lucide-react";
 import { handleLinkClick } from "../utils/navigate.js";
 import { projects } from "../data/projects.js";
 
@@ -83,6 +83,17 @@ const ProjectDetail = ({ project }) => {
           </div>
 
           <div className="flex flex-wrap gap-3">
+            {project.demoRoute && (
+              <a
+                href={project.demoRoute}
+                onClick={(e) => handleLinkClick(e, project.demoRoute)}
+                className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/80 text-sm font-medium"
+              >
+                <Play size={16} />
+                {project.demoRouteLabel || "Try the demo"}
+              </a>
+            )}
+
             {project.demo && (
               <a
                 href={project.demo}
@@ -90,7 +101,7 @@ const ProjectDetail = ({ project }) => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/80 text-sm font-medium"
               >
-                View live demo
+                {project.demoLabel || "View live demo"}
                 <ExternalLink size={16} />
               </a>
             )}
