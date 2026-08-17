@@ -24,6 +24,14 @@ export const projects = [
         description:
           "Paste a single script tag on any site and GetWaitly renders a branded waitlist form that matches your colors and fonts. Try the full widget below — submit your email to see the signup flow live.",
       },
+      {
+        id: "mini-widget",
+        type: "mini-widget",
+        waitlistId: "8cesMilRvke",
+        title: "Mini widget",
+        description:
+          "A compact, email-only signup form for tight spaces — sidebars, footers, or in-line CTAs. Drop in the same script tag, add the mini widget container, and it renders instantly.",
+      },
     ],
     role: "Solo developer (design + code)",
     year: "2026",
